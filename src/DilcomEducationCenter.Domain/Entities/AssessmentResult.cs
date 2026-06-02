@@ -1,0 +1,11 @@
+namespace DilcomEducationCenter.Domain.Entities;
+
+public sealed class AssessmentResult
+{
+    public int EnrollmentId { get; set; }
+    public int AssessmentId { get; set; }
+    public short Score { get; set; }
+
+    public Enrollment Enrollment { get; set; } = null!;
+    public Assessment Assessment { get; set; } = null!;
+}
