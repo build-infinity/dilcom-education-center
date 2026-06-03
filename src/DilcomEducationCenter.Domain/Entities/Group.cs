@@ -12,8 +12,8 @@ public sealed class Group
     public short Capacity { get; set; }
     public int? TeacherId { get; set; }
     public int CourseId { get; set; }
-    public DateTime UpdatedAt { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedOn { get; set; }
+    public DateTime CreatedOn { get; set; }
 
     public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
     public Teacher? Teacher { get; set; } = null!;

@@ -6,5 +6,5 @@ public sealed class TimeSlot
     public string Name { get; set; } = null!; 
     public TimeOnly StartTime { get; set; } 
     public TimeOnly EndTime { get; set; }
-    public DateTime CreatedAt { get; set; } 
+    public DateTime CreatedOn { get; set; } 
 }

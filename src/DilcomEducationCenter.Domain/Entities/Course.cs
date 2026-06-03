@@ -8,8 +8,8 @@ public sealed class Course
     public decimal Price { get; set; }
     public int DurationWeeks { get; set; }
     public string Description { get; set; } = null!;
-    public DateTime UpdatedAt { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedOn { get; set; }
+    public DateTime CreatedOn { get; set; }
 
     public ICollection<Group> Groups { get; set; } = new List<Group>();
 }

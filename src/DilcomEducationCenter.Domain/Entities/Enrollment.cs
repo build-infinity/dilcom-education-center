@@ -9,7 +9,7 @@ public sealed class Enrollment
     public int GroupId { get; set; }
     public string? Note { get; set; }
     public EnrollmentStatus Status { get; set; }
-    public DateTime EnrolledAt { get; set; }
+    public DateTime EnrolledOn { get; set; }
 
     public Student Student { get; set; } = null!;
     public Group Group { get; set; } = null!;

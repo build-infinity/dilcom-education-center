@@ -1,4 +1,5 @@
 using DilcomEducationCenter.Domain.Enums;
+using DilcomEducationCenter.Domain.ValueObjects;
 
 namespace DilcomEducationCenter.Domain.Entities;
 
@@ -9,9 +10,10 @@ public sealed class Parent
     public string LastName { get; set; } = null!;
     public DateOnly BirthDate { get; set; }
     public Gender Gender { get; set; }
-    public string WorkPlace { get; set; } = null!;
-    public DateTime UpdatedAt { get; set; } 
-    public DateTime CreatedAt { get; set; }
+    public Email? Email { get; set; }
+    public string? WorkPlace { get; set; } 
+    public DateTime UpdatedOn { get; set; } 
+    public DateTime CreatedOn { get; set; }
 
     public ICollection<StudentParent> StudentParents { get; set; } = new List<StudentParent>();
 }
