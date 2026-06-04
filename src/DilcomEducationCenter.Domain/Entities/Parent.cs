@@ -11,6 +11,7 @@ public sealed class Parent
     public DateOnly BirthDate { get; set; }
     public Gender Gender { get; set; }
     public Email? Email { get; set; }
+    public PhoneNumber PhoneNumber { get; set; } = null!; 
     public string? WorkPlace { get; set; } 
     public DateTime UpdatedOn { get; set; } 
     public DateTime CreatedOn { get; set; }

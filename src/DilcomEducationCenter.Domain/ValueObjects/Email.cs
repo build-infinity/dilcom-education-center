@@ -32,4 +32,5 @@ public sealed record Email
         
         return Result<Email>.Success(new Email(mailAddress.Address.ToLowerInvariant()));
     }
+    public override string ToString() => Value;
 }

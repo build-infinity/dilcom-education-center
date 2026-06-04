@@ -8,8 +8,9 @@ public sealed class User
     public int Id { get; set; }
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
-    public DateOnly BirthDate { get; set;}
+    public DateOnly BirthDate { get; set; }
     public Email Email { get; set; } = null!;
+    public PhoneNumber PhoneNumber { get; set; } = null!;
     public Gender Gender { get; set; }
     public string Login { get; set;} = null!;
     public string PasswordHash { get; set; } = null!;

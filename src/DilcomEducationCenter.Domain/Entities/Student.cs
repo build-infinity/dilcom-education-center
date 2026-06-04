@@ -10,7 +10,8 @@ public sealed class Student
     public string LastName { get; set; } = null!;
     public Gender Gender { get; set; }
     public DateOnly BirthDate { get; set; }
-    public Email Email { get; set; } = null!;
+    public Email? Email { get; set; }
+    public PhoneNumber PhoneNumber { get; set;} = null!;
     public DateTime UpdatedOn { get; set; }
     public DateTime CreatedOn { get; set; }
 
