@@ -2,5 +2,6 @@ namespace DilcomEducationCenter.Domain.Enums;
 
 public enum ErrorType
 {
-    Validation
+    Validation,
+    Unauthorized
 }
