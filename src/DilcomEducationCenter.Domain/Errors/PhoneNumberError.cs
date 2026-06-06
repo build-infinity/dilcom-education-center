@@ -2,7 +2,7 @@ using DilcomEducationCenter.Domain.Common;
 
 namespace DilcomEducationCenter.Domain.Enums;
 
-public static class PhoneNumberErrors
+public static class PhoneNumberError
 {
     public static readonly Error Empty = new Error("PhoneNumber.Empty", "Phone number is required.", ErrorType.Validation);
     public static readonly Error InvalidFormat = new Error("PhoneNumber.InvalidFormat", "Phone number must contain only '+' and digits.", ErrorType.Validation);

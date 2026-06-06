@@ -19,20 +19,20 @@ public sealed record PhoneNumber
     public static Result<PhoneNumber> Create(string value)
     {
         if(string.IsNullOrWhiteSpace(value))
-            return Result<PhoneNumber>.Failure(PhoneNumberErrors.Empty);
+            return Result<PhoneNumber>.Failure(PhoneNumberError.Empty);
         
         value = Normalize(value);
 
         if(!OnlyDigitsWithPlusRegex.IsMatch(value))
-            return Result<PhoneNumber>.Failure(PhoneNumberErrors.InvalidFormat);
+            return Result<PhoneNumber>.Failure(PhoneNumberError.InvalidFormat);
 
         if (!value.StartsWith("+" + CountryCode, StringComparison.Ordinal))
-            return Result<PhoneNumber>.Failure(PhoneNumberErrors.InvalidCountryCode);
+            return Result<PhoneNumber>.Failure(PhoneNumberError.InvalidCountryCode);
         
         string digitdOnly = value[1..];
 
         if(digitdOnly.Length != TotalDigits)
-            return Result<PhoneNumber>.Failure(PhoneNumberErrors.InvalidLength);
+            return Result<PhoneNumber>.Failure(PhoneNumberError.InvalidLength);
 
         return Result<PhoneNumber>.Success(new PhoneNumber(value));
     }

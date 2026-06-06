@@ -17,18 +17,18 @@ public sealed record Email
     public static Result<Email> Create(string value)
     {
         if(string.IsNullOrWhiteSpace(value)) 
-            return Result<Email>.Failure(EmailErrors.Empty);
+            return Result<Email>.Failure(EmailError.Empty);
 
         value = value.Trim();
 
         if(!MailAddress.TryCreate(value, out var mailAddress))
-            return Result<Email>.Failure(EmailErrors.InvalidFormat);
+            return Result<Email>.Failure(EmailError.InvalidFormat);
 
         if(!mailAddress.Address.Equals(value, StringComparison.OrdinalIgnoreCase))
-            return Result<Email>.Failure(EmailErrors.InvalidFormat);
+            return Result<Email>.Failure(EmailError.InvalidFormat);
         
         if(!mailAddress.Host.Equals(SupportedProvider, StringComparison.OrdinalIgnoreCase))
-            return Result<Email>.Failure(EmailErrors.UnsupportedProvider);
+            return Result<Email>.Failure(EmailError.UnsupportedProvider);
         
         return Result<Email>.Success(new Email(mailAddress.Address.ToLowerInvariant()));
     }
