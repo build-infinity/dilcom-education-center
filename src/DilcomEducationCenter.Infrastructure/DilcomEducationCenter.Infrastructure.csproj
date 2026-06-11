@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DilcomEducationCenter.Domain\DilcomEducationCenter.Domain.csproj" />
+    <ProjectReference Include="..\DilcomEducationCenter.Application\DilcomEducationCenter.Application.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
