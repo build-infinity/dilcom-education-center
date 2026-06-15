@@ -27,7 +27,7 @@ public sealed class AuthService
         if(!_passwordHasher.Verify(loginRequestDto.Password, user.PasswordHash))
            return Result<LoginResponseDto>.Failure(AuthError.InvalidCredentials);
 
-        var token = _tokenProvider.Generate(user);
+        var token = _tokenProvider.GenerateAccessToken(user);
 
         return Result<LoginResponseDto>.Success( new LoginResponseDto(token)); 
     }

@@ -4,5 +4,5 @@ namespace DilcomEducationCenter.Application.Abstractions;
 
 public interface ITokenProvider
 {
-    string Generate(User user);    
+    string GenerateAccessToken(User user);    
 }
