@@ -17,18 +17,18 @@ public sealed class AuthService
         _passwordHasher = passwordHasher;
         _tokenProvider = tokenProvider;
     }
-    public async Task<Result<LoginResponseDto>> Login(LoginRequestDto loginRequestDto)
+    public async Task<Result<LoginResponse>> Login(LoginRequest loginRequestDto)
     {
         var user = await _userRepository.GetByLogin(loginRequestDto.Login); 
 
         if(user is null) 
-           return Result<LoginResponseDto>.Failure(AuthError.InvalidCredentials);
+           return Result<LoginResponse>.Failure(AuthError.InvalidCredentials);
         
         if(!_passwordHasher.Verify(loginRequestDto.Password, user.PasswordHash))
-           return Result<LoginResponseDto>.Failure(AuthError.InvalidCredentials);
+           return Result<LoginResponse>.Failure(AuthError.InvalidCredentials);
 
         var token = _tokenProvider.GenerateAccessToken(user);
 
-        return Result<LoginResponseDto>.Success( new LoginResponseDto(token)); 
+        return Result<LoginResponse>.Success(new LoginResponse(token)); 
     }
 }

@@ -1,10 +1,10 @@
 namespace DilcomEducationCenter.Application.DTOs;
 
-public sealed record LoginResponseDto
+public sealed record LoginResponse
 {
     public string Token { get; }
 
-    public LoginResponseDto(string token)
+    public LoginResponse(string token)
     {
         Token = token;
     }

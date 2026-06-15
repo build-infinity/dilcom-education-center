@@ -1,11 +1,11 @@
 namespace DilcomEducationCenter.Application.DTOs;
 
-public sealed record LoginRequestDto
+public sealed record LoginRequest
 {
     public string Login { get; }
     public string Password { get; }
 
-    public LoginRequestDto(string login, string password)
+    public LoginRequest(string login, string password)
     {
         Login = login;
         Password = password;
