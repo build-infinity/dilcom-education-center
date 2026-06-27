@@ -1,11 +1,12 @@
 using DilcomEducationCenter.Application.Abstractions;
 using DilcomEducationCenter.Application.DTOs;
 using DilcomEducationCenter.Application.Errors;
+using DilcomEducationCenter.Application.Interfaces;
 using DilcomEducationCenter.Domain.Common;
 
 namespace DilcomEducationCenter.Application.Services;
 
-public sealed class AuthService
+public sealed class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
     private readonly IPasswordHasher _passwordHasher;
