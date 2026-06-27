@@ -16,9 +16,9 @@ public sealed class AuthController : ControllerBase
     }
 
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
+    public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest, CancellationToken cancellationToken)
     {
-        var result = await _authService.Login(loginRequest);
+        var result = await _authService.Login(loginRequest, cancellationToken);
 
         if(result.IsSuccess)
             return Ok(result.Data);

@@ -18,9 +18,9 @@ public sealed class AuthService : IAuthService
         _passwordHasher = passwordHasher;
         _tokenProvider = tokenProvider;
     }
-    public async Task<Result<LoginResponse>> Login(LoginRequest loginRequestDto)
+    public async Task<Result<LoginResponse>> Login(LoginRequest loginRequestDto, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByLogin(loginRequestDto.Login); 
+        var user = await _userRepository.GetByLogin(loginRequestDto.Login, cancellationToken); 
 
         if(user is null) 
            return Result<LoginResponse>.Failure(AuthError.InvalidCredentials);

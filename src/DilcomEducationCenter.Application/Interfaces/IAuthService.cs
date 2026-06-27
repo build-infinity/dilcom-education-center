@@ -5,5 +5,5 @@ namespace DilcomEducationCenter.Application.Interfaces;
 
 public interface IAuthService
 {
-    Task<Result<LoginResponse>> Login(LoginRequest loginRequest);
+    Task<Result<LoginResponse>> Login(LoginRequest loginRequest, CancellationToken cancellationToken = default);
 }
