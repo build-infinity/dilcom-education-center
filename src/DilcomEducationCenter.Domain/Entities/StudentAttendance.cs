@@ -4,8 +4,8 @@ namespace DilcomEducationCenter.Domain.Entities;
 
 public sealed class StudentAttendance
 {
-    public int EnrollmentId { get; set; }
-    public int LessonId { get; set; }
+    public Guid EnrollmentId { get; set; }
+    public Guid LessonId { get; set; }
     public AttendanceStatus Status { get; set; }
 
     public Enrollment Enrollment { get; set; } = null!; 

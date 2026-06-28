@@ -5,7 +5,7 @@ namespace DilcomEducationCenter.Domain.Entities;
 
 public sealed class Parent
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public DateOnly BirthDate { get; set; }

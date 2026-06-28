@@ -2,11 +2,11 @@ namespace  DilcomEducationCenter.Domain.Entities;
 
 public sealed class Lesson
 {
-    public int Id { get; set; }
-    public int GroupId { get; set; }
-    public int TeacherId { get; set; }
-    public int RoomId { get; set; }
-    public int TimeSlotId { get; set; }
+    public Guid Id { get; set; }
+    public Guid GroupId { get; set; }
+    public Guid TeacherId { get; set; }
+    public Guid RoomId { get; set; }
+    public Guid TimeSlotId { get; set; }
     public DateOnly Date { get; set; }
 
     public ICollection<StudentAttendance> StudentAttendances { get; set; } = new List<StudentAttendance>();

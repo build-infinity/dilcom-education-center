@@ -3,7 +3,7 @@ namespace DilcomEducationCenter.Domain.Entities;
 
 public sealed class Course
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; } = null!;
     public decimal Price { get; set; }
     public int DurationWeeks { get; set; }

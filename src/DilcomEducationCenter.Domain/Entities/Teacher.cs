@@ -2,14 +2,14 @@ namespace DilcomEducationCenter.Domain.Entities;
 
 public sealed class Teacher
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Education { get; set; } = null!;
     public string Degree { get; set; } = null!;
     public string? Majority { get; set; } = null!; 
     public decimal Salary { get; set; }
     public short ExperienceInYears { get; set; }
     public DateOnly HiredOn { get; set; }
-    public int UserId { get; set; }
+    public Guid UserId { get; set; }
     public DateTime UpdatedOn { get; set; }
     public DateTime CreatedOn { get; set; }
 
