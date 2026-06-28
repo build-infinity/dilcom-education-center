@@ -1,16 +1,13 @@
-using DilcomEducationCenter.Domain.Enums;
-
 namespace DilcomEducationCenter.Application.DTOs;
 
-public record CreateUserRequest
+public sealed record CreateUserResponse
 {
+    public Guid Id { get; init; }
     public string FirstName { get; init; } = null!;
     public string LastName { get; init; } = null!;
     public DateOnly BirthDate { get; init; }
-    public string Email { get; init; } = null!;
+    public string  Email { get; init; } = null!;
     public string Phone { get; init; } = null!;
-    public Gender Gender { get; init; }
-    public string Login { get; init; } = null!;
-    public string Password { get; init; } = null!;
+    public string Gender { get; init; } = null!;
     public string Role { get; init; } = null!;
 }
