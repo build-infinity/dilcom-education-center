@@ -8,7 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace DilcomEducationCenter.Infrastructure.Security.TokenProvider;
 
-public sealed class JwtProvider : ITokenProvider
+internal sealed class JwtProvider : ITokenProvider
 {
     private readonly JwtOptions _jwtOptions;
     public JwtProvider(IOptions<JwtOptions> jwtOptions)

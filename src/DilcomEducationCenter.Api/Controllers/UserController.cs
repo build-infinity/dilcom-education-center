@@ -17,8 +17,8 @@ public sealed class UserController : ControllerBase
         _userService = userService;
     }
     
-    [HttpPost]
     [Authorize(Roles = "Admin,SuperAdmin")]
+    [HttpPost]
     public async Task<IActionResult> CreateUserAsync([FromBody] CreateUserRequest createUserRequest, CancellationToken cancellationToken)
     {
         var result = await _userService.CreateUserAsync(createUserRequest, GetCurrentUser().Role, cancellationToken);
