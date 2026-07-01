@@ -22,4 +22,6 @@ public sealed class Result<TData>
     {
         return new Result<TData>(false, default, error);
     }
+    public TResult Match<TResult>(Func<TData, TResult> onSuccess, Func<Error, TResult> onFailure) =>
+        IsSuccess ? onSuccess(Data!) : onFailure(Error!);
 }

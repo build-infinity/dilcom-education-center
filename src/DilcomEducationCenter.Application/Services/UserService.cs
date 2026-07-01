@@ -1,5 +1,6 @@
 using DilcomEducationCenter.Application.Abstractions;
 using DilcomEducationCenter.Application.DTOs;
+using DilcomEducationCenter.Application.Interfaces;
 using DilcomEducationCenter.Domain.Common;
 using DilcomEducationCenter.Domain.Entities;
 using DilcomEducationCenter.Domain.Enums;
@@ -7,7 +8,7 @@ using DilcomEducationCenter.Domain.ValueObjects;
 
 namespace DilcomEducationCenter.Application.Services;
 
-public sealed class UserService
+public sealed class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IRoleRepository _roleRepository;
@@ -21,7 +22,7 @@ public sealed class UserService
         _passwordHasher = passwordHasher;
         _unitOfWork = unitOfWork;
     }
-    public async Task<Result<CreateUserResponse>> CreateUserAsync(CreateUserRequest createUserRequest, string creatorRole, CancellationToken cancellationToken)
+    public async Task<Result<CreateUserResponse>> CreateUserAsync(CreateUserRequest createUserRequest, string creatorRole,CancellationToken cancellationToken = default)
     {
         var role = await _roleRepository.GetByName(createUserRequest.Role, cancellationToken);
 
